@@ -125,7 +125,7 @@ only diffuse:
 
 shading=diffuse + specular:
 
-![](teapot shading.png)
+![](./teapot%20shading-1662933575331-1.png)
 
 #### Step 3 Shadows
 
