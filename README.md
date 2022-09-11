@@ -1,11 +1,14 @@
 # RaytracingFinal
 
 ## Example images
-![](C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot.png)
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\balls.png" alt="balls" style="zoom: 100%;" />
+ 
 
-![rings](C:\Users\DELL\Desktop\作业\RaytracingFinal\rings.png)
+![teapot](./teapot.png)
+
+![teapot](./balls.png)
+
+![teapot](./rings.png)
 
 
 
@@ -17,7 +20,7 @@
 
 The intersection is used to calculated the intersection of a ray with a triangle or sphere, which could be applied to find where the ray hits. The closest point in the intersecting pixel is found after the traverse and the data saved in HitRecord hr is updated for the next step.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot black.png" alt="teapot" style="zoom: 60%;" />
+![](./teapot black.png)
 
 ```c++
 bool Sphere::intersect(const Ray &r, double t0, double t1, HitRecord &hr) const {
@@ -118,11 +121,11 @@ Calculate the diffuse and specular light by the shading skills which used in ass
 
 only diffuse:
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot diffuse.png" alt="teapot" style="zoom: 60%;" />
+![](./teapot diffuse.png)
 
 shading=diffuse + specular:
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot shading.png" alt="teapot" style="zoom: 60%;" />
+![](teapot shading.png)
 
 #### Step 3 Shadows
 
@@ -130,7 +133,7 @@ Use the similar principle when dealing with shadows and reflections----to figure
 
 In shadow part: if the light ray hit any surfaces return black color. The initial value of t0 is set to be greater than 0 to prevent the intersection of light ray and itself, while the initial value of t1 is set to a sufficiently large number, which is the magnitude of light ray.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot shadow.png" alt="teapot" style="zoom: 60%;" />
+![](teapot shadow.png)
 
 #### Step 4 Reflection
 
@@ -138,7 +141,7 @@ In reflection part: if the reflection ray of the eye-ray hit anything, the point
 
 when doing reflection there was a recursive loop between trace and shade, what I could do is to set a threshold value to stop this recursive loop
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot.png" alt="teapot" style="zoom: 60%;" />
+![teapot](./teapot.png)
 
 ```c++
 SlVector3 Tracer::shade(HitRecord &hr) const {
@@ -196,17 +199,17 @@ SlVector3 Tracer::shade(HitRecord &hr) const {
 
 The first problem I met in programming is the shading part. it is easy to miss the color of the object hr.f.color. As the result of this process, the rendering figure was white.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot white.jpg" alt="teapot" style="zoom: 60%;" />
+![teapot](./teapot white.jpg)
 
 #### Second
 
 The second problem I met is that I consider the normal vector of the triangle in the opposite direction, which result the black color of the teapot base.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot blackbase.png" alt="teapot" style="zoom: 60%;" />
+![teapot](./teapot blackbase.png)
 
 To find out the reason, I have removed the section of Specular and examined the Diffuse error.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot white2.png" alt="teapot" style="zoom: 60%;" />
+![teapot](./teapot white2.png)
 
 To solve this problem, the only thing we need to do is to change the order of two line of triangle in cross product.
 
@@ -214,13 +217,13 @@ To solve this problem, the only thing we need to do is to change the order of tw
 
 Then when I calculate the specular of the light shading, I've reversed the order of taking non-negative value and power function. The result is a very interesting and strange picture.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot spec.png" alt="teapot" style="zoom: 60%;" />
+![teapot](./teapot spec.png)
 
 #### Fourth
 
 This problem I met is in the shadow part. After programming, I found that there were too many black spots. I suspect this is due to the precision of the numbers. So I changed some of the float data types that I defined to double.
 
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot blackspots.png" alt="teapot" style="zoom: 100%;" />
+![teapot](./teapot blackspots.png)
 
 #### Fifth
 
