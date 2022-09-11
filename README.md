@@ -4,7 +4,7 @@
 
 <img src="\teapot.png" alt="cube" style="zoom: 33%;" />
 <img src="RaytracingFinal\rings.png" alt="cube" style="zoom: 33%;" />
-![teapot]()
+![teapot]("C:\Users\DELL\Desktop\作业\RaytracingFinal\rings.png"）
 
 ## A description of what I implemented
 
