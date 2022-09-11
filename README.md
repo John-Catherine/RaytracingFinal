@@ -4,7 +4,7 @@
 
  
 
-![teapot](./teapot.png)
+![](./pic/README/teapot-1662933856344-4.png)
 
 ![teapot](./balls.png)
 
