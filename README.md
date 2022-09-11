@@ -1,7 +1,7 @@
 # RaytracingFinal
 
 ## Example images
-<img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot.png" alt="teapot" style="zoom: 100%;" />
+![](C:\Users\DELL\Desktop\作业\RaytracingFinal\teapot.png)
 
 <img src="C:\Users\DELL\Desktop\作业\RaytracingFinal\balls.png" alt="balls" style="zoom: 100%;" />
 
